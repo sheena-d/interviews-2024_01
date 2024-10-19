@@ -1,0 +1,41 @@
+{
+  "test_cases": [
+    {
+      "type": "NetworkActivity",
+      "test_name": "network_001",
+      "args": ["tcp", "192.168.0.0", "9000", "data_to_send"]
+    },
+    {
+      "type": "NetworkToNetworkActivity",
+      "test_name": "network_002",
+      "args": ["tcp", "192.168.0.0", "9000", "http", "192.168.0.0", "80"]
+    },
+    {
+      "type": "FileCreateActivity",
+      "test_name": "file_001",
+      "args": ["test.csv", ["~", "Documents"]]
+    },
+    {
+      "type": "FileModifyActivity",
+      "test_name": "file_002",
+      "args": ["test.csv", ["~", "Documents"]]
+    },
+    {
+      "type": "FileDeleteActivity",
+      "test_name": "file_003",
+      "args": ["test.csv", ["~", "Documents"]]
+    },
+    {
+      "type": "ProcessStartActivity",
+      "test_name": "process_001",
+      "platform": "Linux",
+      "args": [["./executable.sh", "-v"]]
+    },
+    {
+      "type": "ProcessStartActivity",
+      "test_name": "process_002",
+      "platform": "Windows",
+      "args": [["executable.exe", "some_args"]]
+    }
+  ]
+}
